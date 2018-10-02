@@ -9,7 +9,10 @@ buildscript {
 
 task main {
     doLast {
-    	org.ajoberstar.grgit.Grgit.clone(dir: 'checkout', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
-        println 'Running checkout stage'
+    	println 'Running checkout stage'
+    	println('Cloning repo...')
+    	org.ajoberstar.grgit.Grgit.clone(dir: 'core-checkout', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
+        println('Cloned.')
+        
     }
 }
