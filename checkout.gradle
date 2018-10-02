@@ -13,6 +13,11 @@ task main {
     	println('Cloning repo...')
     	org.ajoberstar.grgit.Grgit.clone(dir: 'core-checkout', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
         println('Cloned.')
-        
     }
+}
+
+task buildCoreStage(mustRunAfter: 'main', type: GradleBuild) {
+	println('Attempting to run core-checkout :main...')
+	buildFile = './core-checkout/checkout-core.gradle'
+    tasks = ['main']
 }
