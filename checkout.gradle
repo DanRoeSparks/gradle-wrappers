@@ -11,7 +11,7 @@ task main {
     doLast {
     	println 'Running checkout stage'
     	println('Cloning repo...')
-    	org.ajoberstar.grgit.Grgit.clone(refToCheckout: 'v0.1.3', dir: 'core-checkout', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
+    	org.ajoberstar.grgit.Grgit.clone(refToCheckout: System.getenv('CHECKOUT_VERSION'), dir: 'core-checkout', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
         println('Cloned.')
     }
 }
