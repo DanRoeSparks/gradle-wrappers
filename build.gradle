@@ -11,8 +11,8 @@ task main {
     doLast {
     	println 'Running build stage'
     	println('Cloning repo...')
-    	org.ajoberstar.grgit.Grgit.clone(dir: 'core-build', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
+    	org.ajoberstar.grgit.Grgit.clone(refToCheckout: 'v0.1.1', dir: 'core-build', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
         println('Cloned.')
-        
+
     }
 }
