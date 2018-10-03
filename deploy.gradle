@@ -11,8 +11,7 @@ task main {
     doLast {
     	println 'Running deploy stage'
     	println('Cloning repo...')
-    	org.ajoberstar.grgit.Grgit.clone(refToCheckout: 'v0.1.2', dir: 'core-deploy', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
+    	org.ajoberstar.grgit.Grgit.clone(refToCheckout: System.getenv('DEPLOY_VERSION'), dir: 'core-deploy', uri: 'https://github.com/DanRoeSparks/gradle-core.git')
         println('Cloned.')
-        
     }
 }
